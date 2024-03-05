@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-q7@@hr2d92$y8#l=e7ah-dk#p*&_=)9h=r0gpgd1o^m%631_nf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0']
-# ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -144,11 +143,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_URL = '/static/'
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
-if not DEBUG and not True: # this broke my code, and didn't work on development either
+if not DEBUG: # this broke my code, and didn't work on development either
+    
+    ALLOWED_HOSTS = ['0.0.0.0']
+    # ALLOWED_HOSTS = ['127.0.0.1']
+
+    
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+    # STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
