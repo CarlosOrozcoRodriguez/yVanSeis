@@ -10,7 +10,7 @@ services:
     name: Practica
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn --bind 127.0.0.1:8000 Practica.wsgi:application"
+    startCommand: "gunicorn --bind 0.0.0.0:8000 Practica.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
