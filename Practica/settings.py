@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-q7@@hr2d92$y8#l=e7ah-dk#p*&_=)9h=r0gpgd1o^m%631_nf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'Practica.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/Practica',
+        default='postgres://practica:4aECY05pBYJM0wgUTIpQYTHUYHchtoiF@dpg-cnjn9tgl5elc73a8uh5g-a/practica_et55:5432/Practica',
         conn_max_age=600
     )
 }
@@ -121,7 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR/'static',]
 
 # Default primary key field type
