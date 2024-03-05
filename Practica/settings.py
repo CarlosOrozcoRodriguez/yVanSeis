@@ -144,8 +144,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG: # this broke my code, and didn't work on development either
     
-    ALLOWED_HOSTS = ['0.0.0.0']
-    # ALLOWED_HOSTS = ['127.0.0.1']
+    # ALLOWED_HOSTS = ['0.0.0.0']
+    ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0']
 
     
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
