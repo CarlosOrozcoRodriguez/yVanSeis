@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-q7@@hr2d92$y8#l=e7ah-dk#p*&_=)9h=r0gpgd1o^m%631_nf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0']
-
+# ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -80,9 +80,16 @@ WSGI_APPLICATION = 'Practica.wsgi.application'
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
+
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+
+
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgres://practica:4aECY05pBYJM0wgUTIpQYTHUYHchtoiF@dpg-cnjn9tgl5elc73a8uh5g-a/practica_et55:5432/Practica',
+        default='postgres://practica:N1L7wilcFQTESZAV1YFuvbNsZWT6Ar2K@dpg-cnjon37sc6pc73fskleg-a.oregon-postgres.render.com/practica_xlpy',
         conn_max_age=600
     )
 }
@@ -121,7 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-# STATIC_URL = 'static/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR/'static',]
 
 # Default primary key field type
@@ -134,12 +141,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # This setting informs Django of the URI path from which your static files will be served to users
 # Here, they well be accessible at your-domain.onrender.com/static/... or yourcustomdomain.com/static/...
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
-if not DEBUG:
+if not DEBUG and not True: # this broke my code, and didn't work on development either
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
