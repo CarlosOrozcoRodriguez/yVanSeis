@@ -145,7 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if not DEBUG: # this broke my code, and didn't work on development either
     
     # ALLOWED_HOSTS = ['0.0.0.0']
-    ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0']
+    ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','https://practica-1j3m.onrender.com/']
 
     
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
