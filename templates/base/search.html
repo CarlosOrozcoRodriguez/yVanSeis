@@ -1,0 +1,25 @@
+<!--templates/base.html-->
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <!--  Indico al navegador que juego de
+        caracteres debe usar -->
+        <meta charset="UTF-8">
+        <title> Resultado de la búsqueda </title>
+    </head>
+
+    <body>
+        <h1> Resultado de la búsqueda </h1>
+        {% if libros %}
+        <p> Se han encontrado {{libros|length}} libros</p>
+        <ul>
+            {% for libro in libros %}
+            <li> {{libro}} </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p> No se han encontrado coincidencias</p>
+        {% endif%}  
+    </body>
+</html>
