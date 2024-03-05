@@ -1,8 +1,8 @@
 databases:
   - name: Practica
     plan: free
-    databaseName: Practica
-    user: Practica
+    databaseName: practica
+    user: practica
 
 services:
   - type: web
