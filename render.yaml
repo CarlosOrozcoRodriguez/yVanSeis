@@ -1,5 +1,5 @@
 databases:
-  - name: Practica
+  - name: Practicadb
     plan: free
     databaseName: practica
     user: practica
