@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-q7@@hr2d92$y8#l=e7ah-dk#p*&_=)9h=r0gpgd1o^m%631_nf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -145,7 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if not DEBUG: # this broke my code, and didn't work on development either
     
     # ALLOWED_HOSTS = ['0.0.0.0']
-    ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','https://practica-1j3m.onrender.com/']
+    ALLOWED_HOSTS = ['*']
 
     
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
